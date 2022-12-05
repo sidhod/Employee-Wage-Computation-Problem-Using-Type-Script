@@ -12,11 +12,15 @@ let empHrs: number = 0;
 let empWage: number = 0;
 
 var empCheck = Math.floor(Math.random() * 3) + 0;
-if (empCheck === IS_Part_Time)
-    empHrs = 4;
-else if (empCheck === IS_Full_Time)
-    empHrs = 8;
-else
-    empHrs = 0;
+switch (empCheck) {
+    case IS_Part_Time:
+        empHrs = 4;
+        break;
+    case IS_Full_Time:
+        empHrs = 8;
+        break;
+    default:
+        empHrs = 0;
+}
 empWage = empHrs * EMP_RATE_PER_HOUR;
-console.log("Emp Wage: " + empWage);
+console.log("Employee Wage is: " + empWage);
